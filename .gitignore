@@ -1,0 +1,24 @@
+# Byte-compiled / optimized / DLL files
+*.py[cod]
+
+
+# Venv
+bin/
+lib/
+include/
+.Python
+
+# env config
+environment_settings.py
+src/mrx/mrxcore/mrx-netio.pub
+src/mrx/mrxcore/mrx-netio.key
+
+# dev database
+src/beep/database.sqlite3
+
+# osx lort
+.DS_Store
+
+# vim lort
+*.swp
+*.swo
