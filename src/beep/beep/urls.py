@@ -16,9 +16,12 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 import game.views
+import beep.views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+
+    url(r'^$', beep.views.frontpage, name='frontpage'),
     url(r'^client/(?P<client_mac>[0-9a-f]{12})/$', game.views.api, name='api_detail'),
 
 ]

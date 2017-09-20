@@ -14,9 +14,12 @@ class Clients(models.Model):
 
     # Theese fields below are the values sent to the Client.
     auto_off = models.PositiveIntegerField(default=1)
-    dur_on = models.FloatField(default=0.1)
-    dur_off = models.FloatField(default=0.9)
+    dur_on = models.FloatField(default=0.2)
+    dur_off = models.FloatField(default=2.8)
     post_interval = models.FloatField(default=3)
+
+    # Theese fiels handle interal point giving.
+    points_for_scan = models.IntegerField(default=0)
 
     class Meta:
         pass
@@ -29,7 +32,6 @@ class Player(models.Model):
 
 class GameRound(models.Model):
     time_created = models.DateTimeField(auto_now_add=True, db_index=True)
-
 
 class Score(models.Model):
     player = models.ForeignKey('game.Player')
