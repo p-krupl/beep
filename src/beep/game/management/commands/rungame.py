@@ -16,7 +16,7 @@ class Command(BaseCommand):
 
             if cl:
                 client = random.choice(cl)
-                client.dur_on=0.1
+                client.dur_on=0.9
                 client.dur_off=0.1
                 client.points_for_scan=1
                 client.save()

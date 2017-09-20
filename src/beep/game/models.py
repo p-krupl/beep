@@ -53,7 +53,7 @@ class GameRound(models.Model):
 class Score(models.Model):
     time_created = models.DateTimeField(auto_now_add=True, db_index=True)
     player = models.ForeignKey('game.Player',db_index=True)
-    gameround = models.ForeignKey('game.GameRound',db_index=True)
+    gameround = models.ForeignKey('game.GameRound',db_index=True,related_name='scores')
     client = models.ForeignKey('game.Client') 
     points = models.IntegerField(default=0)
 
