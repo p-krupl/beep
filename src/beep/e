@@ -1,0 +1,1 @@
+INSERT INTO game_clients (client_id,last_seen,light_on,auto_off) VALUES (3,'now',1,0);
