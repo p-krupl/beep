@@ -23,5 +23,5 @@ urlpatterns = [
 
     url(r'^$', beep.views.frontpage, name='frontpage'),
     url(r'^client/(?P<client_mac>[0-9a-f]{12})/$', game.views.api, name='api_detail'),
-
+    url(r'^player/(?P<pk>[0-9]+)/update$', game.views.api, name='player_update'),
 ]

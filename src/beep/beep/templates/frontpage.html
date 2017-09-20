@@ -1,7 +1,11 @@
 {% extends "base.html" %}
 {% load bootstrap3 %}
 {% block head_title %}frontpage{% endblock head_title %}
+{% block extra_head %}
+   <meta http-equiv="refresh" content="5">
+{% endblock extra_head %}
 {% block content %}
-BeeP !
-{% include 'scoreboard.html' %}
+<h1>Point:</h1>
+{% include 'includes/current_scores.html' %}
 {% endblock content %}
+
