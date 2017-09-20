@@ -1,0 +1,8 @@
+<div class="panel panel-info">
+    <div class="panel-heading" role="tab" id="{{ name }}Heading">
+        <h4 class="panel-title">
+            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#{{ name }}" aria-expanded="{% if collapsed %}false{% else %}true{% endif %}" aria-controls="{{ name }}">{{ headline }}</a>
+        </h4>
+    </div>
+    <div id="{{ name }}" class="panel-collapse collapse {% if not collapsed %}in{% endif %}" role="tabpanel" aria-labelledby="{{ name }}Heading">
+        <div class="panel-body">

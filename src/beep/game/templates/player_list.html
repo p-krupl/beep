@@ -1,0 +1,10 @@
+dslfkjlkj
+
+{% for player in player_list %}
+<table class="table">
+    {% url 'player_update' pk=player.pk as player_update_url %}
+    <td><a href="{{ player_update_url }}">{{ player.pk }}</a></td>
+    <td>{{ player.player_id}}</td>
+    <td>{{ player.name}}</td>
+</table>
+{% endfor %}

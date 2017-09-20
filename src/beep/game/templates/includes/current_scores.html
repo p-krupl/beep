@@ -2,5 +2,12 @@
 
 
 {% for player,score in player_ranking %}
-<h2>{{ player.player_id}} - {{ score }}</h2>
+	<h2>
+		{% if player.name %}
+			{{ player.name}}
+		{% else %}
+			{{ player.player_id }}
+		{% endif %}
+		- {{ score }}
+	</h2>
 {% endfor %}

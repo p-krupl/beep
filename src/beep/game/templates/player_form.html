@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load bootstrap3 %}
+{% block head_title %}PlayerUpdate{% endblock head_title %}
+{% block extra_head %}
+{% endblock extra_head %}
+{% block content %}
+<div class="panel panel-default">
+    <div class="panel-heading"><h4>Edit Circuit</h4></div>
+    <div class="panel-body">
+        <form method="POST">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            
+        </form>
+    </div>
+</div>
+lkjlkjlkj
+{% endblock content %}

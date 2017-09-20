@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
+from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView
+
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_http_methods
 from django.shortcuts import render
@@ -10,6 +12,8 @@ from django.http import HttpResponse,JsonResponse
 from time import sleep
 from django.utils import timezone
 from django.db.models import F,Q
+from django.core.urlresolvers import reverse
+
 
 
 from .models import *
@@ -75,6 +79,14 @@ def api(request,client_mac):
 
 class PlayerUpdate(UpdateView):
     model = Player
-    pass
+    fields = ['name']
+    template_name = 'player_form.html'
+    
+    def get_success_url(self):
+        return reverse('player_list')
+
+class PlayerList(ListView):
+    model = Player
+    template_name = 'player_list.html'
 
 
