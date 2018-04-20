@@ -22,4 +22,4 @@ class Command(BaseCommand):
                 client.save()
                 print "Fired client: %s" % client.client_mac
 
-            sleep(random.randint(1,10))
+            sleep(random.randint(1,15))

@@ -32,6 +32,10 @@ def api(request,client_mac):
 
     client_ip = request.META['REMOTE_ADDR']
     client,created = Client.objects.get_or_create(client_mac=client_mac)
+
+    if not created:
+        client.time_last_seen=timezone.now()
+        client.save()
     
     json_data = json.loads(request.body)
     print "RX: %s" % client_ip
@@ -88,5 +92,17 @@ class PlayerUpdate(UpdateView):
 class PlayerList(ListView):
     model = Player
     template_name = 'player_list.html'
+
+class GameRoundList(ListView):
+    model = GameRound
+    template_name = 'gameround_list.html'
+
+    def get_queryset(self):
+        return GameRound.objects.annotate(total_points=Sum('scores__points')).annotate(total_scores=Count('scores')).all()
+
+
+class GameRoundDetail(DetailView):
+    model = GameRound
+    template_name = 'gameround_detail.html'
 
 

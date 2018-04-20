@@ -41,6 +41,11 @@ INSTALLED_APPS = [
     'game',
     # pretty forms
     'bootstrap3',
+
+    # Shell Plus
+    'shell_plus',
+    'django_extensions',
+
 ]
 
 MIDDLEWARE = [
@@ -115,11 +120,23 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+# date time formats
+DATETIME_INPUT_FORMATS = (
+    '%d/%m-%Y %H:%M',     # '27/08-2015 08:00'
+)
+DATE_INPUT_FORMATS = (
+    '%d/%m-%Y',     # '27/08-2015'
+)
+SHORT_DATE_FORMAT = 'd/m-Y'
+DATE_FORMAT = 'd/m-Y'
+DATETIME_FORMAT = 'd/m-Y H:i'
+TIME_FORMAT = 'H:i'
+TIME_ZONE = 'Europe/Copenhagen'
 
-USE_I18N = True
 
-USE_L10N = True
+USE_I18N = False
+
+USE_L10N = False
 
 USE_TZ = True
 

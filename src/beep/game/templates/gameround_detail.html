@@ -1,0 +1,7 @@
+GRD
+
+{{ gameround }}
+
+{% for score in gameround.scores.all %}
+{{ score.player.name }}<br>
+{% endfor %}

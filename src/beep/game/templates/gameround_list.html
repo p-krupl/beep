@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load bootstrap3 %}
+{% block head_title %}GameRound{% endblock head_title %}
+
+{% block extra_head %}
+{% endblock extra_head %}
+
+{% block content %}
+<table class="table table-condensed">
+    {% for round in gameround_list %}
+        <tr>
+            {% url 'gameround_detail' pk=round.pk as gameround_detail_url %}
+            <td><a href="{{ gameround_detail_url }}">{{ round.pk }}</a></td>
+            <td>{{ round.time_created }}</td>
+            <td>{{ round.total_scores }}</td>
+            <td>{{ round.total_points }}</td>
+        </tr>
+    {% endfor %}
+</table>
+
+{% endblock content %}
